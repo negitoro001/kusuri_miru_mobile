@@ -1,0 +1,39 @@
+name: Android CI
+
+on: ["push", "pull_request"]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install asdf, erlang, elixir
+      run: |
+        sudo apt install curl git
+        git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.10.2
+        . $HOME/.asdf/asdf.sh
+        asdf plugin-add erlang
+        asdf plugin-add elixir
+
+        cd app 
+        asdf install
+        mix local.hex --force
+        mix local.rebar --force
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v1
+      with:
+        java-version: 11
+  
+    - name: Build with Gradle
+      run: |
+        . $HOME/.asdf/asdf.sh
+        ./gradlew assembleDebug --stacktrace
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v1
+      with:
+        name: app
+        path: app/build/outputs/apk/debug/app-debug.apk
