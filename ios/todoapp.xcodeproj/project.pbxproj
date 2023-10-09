@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B25FF7942AD3E6AD00A1AEB3 /* liberlang.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB3384628B396F7001E8DC7 /* liberlang.xcframework */; };
+		B25FF7952AD3E6AD00A1AEB3 /* liberlang.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ECB3384628B396F7001E8DC7 /* liberlang.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC01B27228D9F1000067BAEE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC01B27128D9F1000067BAEE /* WebViewController.swift */; };
 		EC712AB026F6964C0066E483 /* TodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC712AAF26F6964C0066E483 /* TodoApp.swift */; };
 		EC712AB226F6964C0066E483 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC712AB126F6964C0066E483 /* ContentView.swift */; };
@@ -19,7 +21,6 @@
 		EC90CFEF273D772900C9A3F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EC90CFEE273D772900C9A3F3 /* README.md */; };
 		ECA856FF28DC70CA00CF6488 /* ZIPFoundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8A1FC62702233000054F1C /* ZIPFoundation.xcframework */; };
 		ECA8570028DC70CA00CF6488 /* ZIPFoundation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC8A1FC62702233000054F1C /* ZIPFoundation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ECB3384728B396F7001E8DC7 /* liberlang.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB3384628B396F7001E8DC7 /* liberlang.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B25FF7952AD3E6AD00A1AEB3 /* liberlang.xcframework in Embed Frameworks */,
 				ECA8570028DC70CA00CF6488 /* ZIPFoundation.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -60,8 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25FF7942AD3E6AD00A1AEB3 /* liberlang.xcframework in Frameworks */,
 				ECA856FF28DC70CA00CF6488 /* ZIPFoundation.xcframework in Frameworks */,
-				ECB3384728B396F7001E8DC7 /* liberlang.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +144,9 @@
 		EC712AA426F6964C0066E483 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					EC712AAB26F6964C0066E483 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -197,7 +200,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/app.zip",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
@@ -259,6 +261,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -320,6 +323,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -344,18 +348,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"todoapp/Preview Content\"";
-				DEVELOPMENT_TEAM = 4PN2DP4655;
+				DEVELOPMENT_TEAM = KM2Y37T9M4;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = todoapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.elixirdesktop.example;
+				PRODUCT_BUNDLE_IDENTIFIER = ryota.satake.project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -369,18 +376,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"todoapp/Preview Content\"";
-				DEVELOPMENT_TEAM = 4PN2DP4655;
+				DEVELOPMENT_TEAM = KM2Y37T9M4;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = todoapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.elixirdesktop.example;
+				PRODUCT_BUNDLE_IDENTIFIER = ryota.satake.project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "example-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

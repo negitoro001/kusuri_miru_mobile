@@ -20,6 +20,6 @@ fi
 
 mix assets.deploy && \
   mix release --overwrite && \
-  cd "_build/${MIX_TARGET}_${MIX_ENV}/rel/todo_app" && \
+  cd "_build/${MIX_TARGET}_${MIX_ENV}/rel/kusuri_miru_mobile" && \
   zip -9r "$APP_FILE" lib/ releases/ --exclude "*.so"
 

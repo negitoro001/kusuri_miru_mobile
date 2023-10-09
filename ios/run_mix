@@ -20,17 +20,13 @@ BASE=`pwd`
 export MIX_ENV=prod
 export MIX_TARGET=ios
 
+cd ../kusuri_miru_mobile
+
 mix local.hex --force --if-missing
 mix local.rebar --force --if-missing
 
-cd ../../kusuri_miru_mobile
-
 if [ ! -d "deps/desktop" ]; then
   mix deps.get
-fi
-
-if [ ! -d "assets/node_modules" ]; then
-  cd assets && npm i && cd ..
 fi
 
 if [ -f "$BASE/kusuri_miru_mobile/app.zip" ]; then
@@ -39,6 +35,6 @@ fi
 
 mix assets.deploy && \
   mix release --overwrite && \
-  cd _build/ios_prod/rel/todo_app && \
-  zip -9r "$BASE/kusuri_miru_mobile/app.zip" lib/ releases/ --exclude "*.so"
+  cd _build/ios_prod/rel/kusuri_miru_mobile && \
+  zip -9r "$BASE/todoapp/app.zip" lib/ releases/ --exclude "*.so"
 
