@@ -23,8 +23,8 @@ defmodule KusuriMiruMobile do
     :session = :ets.new(:session, [:named_table, :public, read_concurrency: true])
 
     children = [
-      #KusuriMiruMobile.Repo,
-      #{Phoenix.PubSub, name: KusuriMiruMobile.PubSub},
+    #  KusuriMiruMobile.Repo,
+      {Phoenix.PubSub, name: KusuriMiruMobile.PubSub},
       KusuriMiruMobileWeb.Endpoint
     ]
 
@@ -47,7 +47,7 @@ defmodule KusuriMiruMobile do
   end
 
   def config_change(changed, _new, removed) do
-    KusuriMiruMobile.Endpoint.config_change(changed, removed)
+    KusuriMiruMobileWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end
