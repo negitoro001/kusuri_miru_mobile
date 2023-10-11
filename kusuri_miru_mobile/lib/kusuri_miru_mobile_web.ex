@@ -85,6 +85,7 @@ defmodule KusuriMiruMobileWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import KusuriMiruMobileWeb.CoreComponents
+      import KusuriMiruMobileWeb.TopBar
       import KusuriMiruMobileWeb.Gettext
 
       # Shortcut for generating JS commands

@@ -18,6 +18,13 @@ defmodule KusuriMiruMobileWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/tops", TopLive.Index, :index
+    live "/tops/new", TopLive.Index, :new
+    live "/tops/:id/edit", TopLive.Index, :edit
+
+    live "/tops/:id", TopLive.Show, :show
+    live "/tops/:id/show/edit", TopLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

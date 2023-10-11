@@ -1,0 +1,18 @@
+<.gheader title="Shleves">
+   <:actions>
+     <.link patch={~p"/tops/new"}>
+         <.icon name="hero-plus-solid" class="h-6 w-6 mr-4" />
+     </.link>
+   </:actions>
+ </.gheader>
+
+<div class="container none">
+  <ul>
+    <li :for={{id, top} <- @streams.tops} id={id}>
+      <%= top.name %>
+      <%= top.icon %>
+      <%= top.category_id %>
+      <%= top.tags %>
+    </li>
+  </ul>
+</div>
