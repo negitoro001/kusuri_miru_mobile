@@ -3,3 +3,136 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("fonts/Material_Icons-400-fallback1.woff2") format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', YuGothic,
+        'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, Arial, 'メイリオ', Meiryo,
+        sans-serif;
+}
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.tag-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.v-input__append-outer {
+    margin-top: 0 !important;
+}
+
+.vue-star-rating-rating-text {
+    font-weight: normal;
+    margin-top: 0 !important;
+    margin-right: 4px;
+}
+
+.average-rating::before {
+    position: static !important;
+}
+
+.plain-text {
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+textarea {
+    resize: both !important;
+}
+
+.container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+.h1-underline {
+    font-size: 1.5rem;
+
+    &:after {
+        content: ' ';
+        width: 100%;
+        display: block;
+        border-width: 1px;
+        border-color: #00c58e;
+        border-style: solid;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+        border-radius: 0.25rem;
+    }
+}
+
+.h2-underline {
+    font-size: 1.5rem;
+    margin-bottom: 1rem !important;
+    width: 100%;
+
+    &:after {
+        content: ' ';
+        width: 100%;
+        display: block;
+        border-width: 1px;
+        border-color: #00c58e;
+        border-style: solid;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+        border-radius: 0.25rem;
+    }
+}
+
+.tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 8px 0;
+    width: initial;
+
+    .medicine-tag {
+        border: 1px solid #b4b2b2;
+        background-color: #fff;
+        border-radius: 4px;
+        color: #454545;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-decoration: none;
+        margin: 6px 8px 6px 0;
+        padding: 0.4rem 0.6rem;
+        width: auto !important;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &.nomatch {
+            display: none;
+        }
+    }
+}
