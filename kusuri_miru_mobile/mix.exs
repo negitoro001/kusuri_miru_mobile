@@ -51,7 +51,8 @@ defmodule KusuriMiruMobile.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:desktop, "~> 1.5"},
-      {:wx, "~>1.1", hex: :bridge, targets: [:android, :ios]}
+      {:wx, "~>1.1", hex: :bridge, targets: [:android, :ios]},
+      {:req, "~>0.4.4"}
     ]
   end
 
