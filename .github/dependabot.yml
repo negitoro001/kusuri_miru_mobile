@@ -8,4 +8,6 @@ updates:
   - package-ecosystem: "mix" # See documentation for possible values
     directory: "/kusuri_miru_mobile" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "daily"
+    reviewers:
+    - "negitoro001"
