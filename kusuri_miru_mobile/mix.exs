@@ -17,9 +17,21 @@ defmodule KusuriMiruMobile.MixProject do
   # Configuration for the OTP application.
   #
   # Type `mix help compile.app` for more information.
+
   def application do
+    application(Mix.target())
+  end
+
+  def application(target) when target in [:android, :ios, :desktop] do
     [
       mod: {KusuriMiruMobile, []},
+      extra_applications: [:logger, :runtime_tools]
+    ]
+  end
+
+  def application(_) do
+    [
+      mod: {KusuriMiruMobile.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -51,7 +63,7 @@ defmodule KusuriMiruMobile.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:desktop, "~> 1.5"},
-      {:wx, "~>1.1", hex: :bridge, targets: [:android, :ios]},
+      {:wx, "~>1.1", hex: :bridge, targets: [:android, :ios, :desktop]},
       {:req, "~>0.4.4"}
     ]
   end
