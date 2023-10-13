@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC712AAB26F6964C0066E483"
-               BuildableName = "todoapp.app"
-               BlueprintName = "todoapp"
-               ReferencedContainer = "container:todoapp.xcodeproj">
+               BuildableName = "kusuri_miru.app"
+               BlueprintName = "kusuri_miru"
+               ReferencedContainer = "container:kusuri_miru.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC712AAB26F6964C0066E483"
-            BuildableName = "todoapp.app"
-            BlueprintName = "todoapp"
-            ReferencedContainer = "container:todoapp.xcodeproj">
+            BuildableName = "kusuri_miru.app"
+            BlueprintName = "kusuri_miru"
+            ReferencedContainer = "container:kusuri_miru.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC712AAB26F6964C0066E483"
-            BuildableName = "todoapp.app"
-            BlueprintName = "todoapp"
-            ReferencedContainer = "container:todoapp.xcodeproj">
+            BuildableName = "kusuri_miru.app"
+            BlueprintName = "kusuri_miru"
+            ReferencedContainer = "container:kusuri_miru.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

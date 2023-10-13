@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		EC01B27128D9F1000067BAEE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		EC712AAC26F6964C0066E483 /* todoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC712AAC26F6964C0066E483 /* kusuri_miru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kusuri_miru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC712AAF26F6964C0066E483 /* TodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoApp.swift; sourceTree = "<group>"; };
 		EC712AB126F6964C0066E483 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EC712AB326F6964C0066E483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		EC712AAD26F6964C0066E483 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC712AAC26F6964C0066E483 /* todoapp.app */,
+				EC712AAC26F6964C0066E483 /* kusuri_miru.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC712AAB26F6964C0066E483 /* todoapp */ = {
+		EC712AAB26F6964C0066E483 /* kusuri_miru */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC712ABB26F6964C0066E483 /* Build configuration list for PBXNativeTarget "todoapp" */;
+			buildConfigurationList = EC712ABB26F6964C0066E483 /* Build configuration list for PBXNativeTarget "kusuri_miru" */;
 			buildPhases = (
 				EC712AA826F6964C0066E483 /* Sources */,
 				EC712AA926F6964C0066E483 /* Frameworks */,
@@ -133,9 +133,9 @@
 			);
 			dependencies = (
 			);
-			name = todoapp;
+			name = kusuri_miru;
 			productName = example;
-			productReference = EC712AAC26F6964C0066E483 /* todoapp.app */;
+			productReference = EC712AAC26F6964C0066E483 /* kusuri_miru.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -154,8 +154,8 @@
 					};
 				};
 			};
-			buildConfigurationList = EC712AA726F6964C0066E483 /* Build configuration list for PBXProject "todoapp" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = EC712AA726F6964C0066E483 /* Build configuration list for PBXProject "kusuri_miru" */;
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -167,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC712AAB26F6964C0066E483 /* todoapp */,
+				EC712AAB26F6964C0066E483 /* kusuri_miru */,
 			);
 		};
 /* End PBXProject section */
@@ -348,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +357,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = todoapp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "クスリミルモバイル";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -384,6 +388,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = todoapp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "クスリミルモバイル";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -401,7 +407,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC712AA726F6964C0066E483 /* Build configuration list for PBXProject "todoapp" */ = {
+		EC712AA726F6964C0066E483 /* Build configuration list for PBXProject "kusuri_miru" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC712AB926F6964C0066E483 /* Debug */,
@@ -410,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC712ABB26F6964C0066E483 /* Build configuration list for PBXNativeTarget "todoapp" */ = {
+		EC712ABB26F6964C0066E483 /* Build configuration list for PBXNativeTarget "kusuri_miru" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC712ABC26F6964C0066E483 /* Debug */,
