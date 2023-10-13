@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		EC01B27128D9F1000067BAEE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		EC712AAC26F6964C0066E483 /* kusuri_miru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kusuri_miru.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC712AAC26F6964C0066E483 /* kusuri_miru_mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kusuri_miru_mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC712AAF26F6964C0066E483 /* TodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoApp.swift; sourceTree = "<group>"; };
 		EC712AB126F6964C0066E483 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EC712AB326F6964C0066E483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		EC712AAD26F6964C0066E483 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC712AAC26F6964C0066E483 /* kusuri_miru.app */,
+				EC712AAC26F6964C0066E483 /* kusuri_miru_mobile.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC712AAB26F6964C0066E483 /* kusuri_miru */ = {
+		EC712AAB26F6964C0066E483 /* kusuri_miru_mobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC712ABB26F6964C0066E483 /* Build configuration list for PBXNativeTarget "kusuri_miru" */;
+			buildConfigurationList = EC712ABB26F6964C0066E483 /* Build configuration list for PBXNativeTarget "kusuri_miru_mobile" */;
 			buildPhases = (
 				EC712AA826F6964C0066E483 /* Sources */,
 				EC712AA926F6964C0066E483 /* Frameworks */,
@@ -133,9 +133,9 @@
 			);
 			dependencies = (
 			);
-			name = kusuri_miru;
+			name = kusuri_miru_mobile;
 			productName = example;
-			productReference = EC712AAC26F6964C0066E483 /* kusuri_miru.app */;
+			productReference = EC712AAC26F6964C0066E483 /* kusuri_miru_mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -154,8 +154,8 @@
 					};
 				};
 			};
-			buildConfigurationList = EC712AA726F6964C0066E483 /* Build configuration list for PBXProject "kusuri_miru" */;
-			compatibilityVersion = "Xcode 15.0";
+			buildConfigurationList = EC712AA726F6964C0066E483 /* Build configuration list for PBXProject "kusuri_miru_mobile" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -167,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC712AAB26F6964C0066E483 /* kusuri_miru */,
+				EC712AAB26F6964C0066E483 /* kusuri_miru_mobile */,
 			);
 		};
 /* End PBXProject section */
@@ -407,7 +407,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC712AA726F6964C0066E483 /* Build configuration list for PBXProject "kusuri_miru" */ = {
+		EC712AA726F6964C0066E483 /* Build configuration list for PBXProject "kusuri_miru_mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC712AB926F6964C0066E483 /* Debug */,
@@ -416,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC712ABB26F6964C0066E483 /* Build configuration list for PBXNativeTarget "kusuri_miru" */ = {
+		EC712ABB26F6964C0066E483 /* Build configuration list for PBXNativeTarget "kusuri_miru_mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC712ABC26F6964C0066E483 /* Debug */,
