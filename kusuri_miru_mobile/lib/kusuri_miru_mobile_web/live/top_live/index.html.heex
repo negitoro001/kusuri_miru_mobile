@@ -9,12 +9,16 @@
 <div class="container none">
   <ul>
     <li :for={{id, top} <- @streams.tops} id={id}>
-      <div>
+      <ul>
         <%= top.name %>
         <img src={~p"/images/icons/disease/#{top.icon}"} height="54px" width="54px" />
         <%= top.category_id %>
-        <%= top.tags %>
-      </div>
+        <li>
+          <%= for tag <- top.tags do %>
+            <ul><%= tag %></ul>
+          <% end %>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>
