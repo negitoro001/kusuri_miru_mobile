@@ -1,27 +1,8 @@
-<.header>
-  Category <%= @category.id %>
-  <:subtitle>This is a category record from your database.</:subtitle>
-  <:actions>
-    <.link patch={~p"/categories/#{@category}/show/edit"} phx-click={JS.push_focus()}>
-      <.button>Edit category</.button>
-    </.link>
-  </:actions>
-</.header>
-
-<.list>
-  <:item title="Name"><%= @category.name %></:item>
-  <:item title="Category name"><%= @category.category_name %></:item>
-</.list>
+<%= for category <- @category do %>
+  <div>
+    <%= category.id %>
+    <%= category.name %>
+  </div>
+<% end %>
 
 <.back navigate={~p"/categories"}>Back to categories</.back>
-
-<.modal :if={@live_action == :edit} id="category-modal" show on_cancel={JS.patch(~p"/categories/#{@category}")}>
-  <.live_component
-    module={KusuriMiruMobileWeb.CategoryLive.FormComponent}
-    id={@category.id}
-    title={@page_title}
-    action={@live_action}
-    category={@category}
-    patch={~p"/categories/#{@category}"}
-  />
-</.modal>

@@ -3,10 +3,7 @@ defmodule KusuriMiruMobile.Categories.Category do
   import Ecto.Changeset
 
   schema "categories" do
-    field :category_name, :string
     field :name, :string
-
-    timestamps()
   end
 
   @doc false

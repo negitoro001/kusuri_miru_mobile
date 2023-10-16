@@ -36,8 +36,16 @@ defmodule KusuriMiruMobile.Categories do
 
   """
   def get_category!(id) do
-    Req.get("/categories/get/#{id}")
-    |> IO.inspect()
+    Req.get!("https://kusuri-miru-api-4b3a54cvqq-an.a.run.app/categories/get/#{id}")
+    |> Map.get(:body)
+    |> Map.get("categories")
+    |> Enum.map(fn category ->
+
+      %Category{
+        id: category["id"],
+        name: category["name"]
+      }
+    end)
   end
 
   @doc """
