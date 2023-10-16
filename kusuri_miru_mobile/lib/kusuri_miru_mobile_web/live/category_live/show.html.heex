@@ -1,0 +1,8 @@
+<%= for category <- @category do %>
+  <div>
+    <%= category.id %>
+    <%= category.name %>
+  </div>
+<% end %>
+
+<.back navigate={~p"/categories"}>Back to categories</.back>

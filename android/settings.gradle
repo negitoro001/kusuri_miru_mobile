@@ -1,2 +1,2 @@
-rootProject.name = "TodoApp"
+rootProject.name = "Kusuri_miru_mobile"
 include ':app'

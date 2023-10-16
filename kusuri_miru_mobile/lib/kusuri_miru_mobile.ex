@@ -41,7 +41,7 @@ defmodule KusuriMiruMobile do
           id: KusuriMiruMobileWindow,
           title: "Kusuri_miru_mobile",
           size: {400, 800},
-          url: "http://localhost:#{port}"
+          url: "http://localhost:#{port}/tops"
         ]
       })
   end
