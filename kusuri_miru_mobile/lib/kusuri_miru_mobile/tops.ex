@@ -43,6 +43,62 @@ defmodule KusuriMiruMobile.Tops do
           "アレルギー性鼻炎",
           "アトピー性皮膚炎"
         ]
+      },
+      %Top{
+        id: 3,
+        name: "呼吸器",
+        icon: "lung.svg",
+        category_id: "e3347",
+        tags: ["インフルエンザ", "せき", "気管支炎", "気管支喘息"]
+      },
+      %Top{
+        id: 4,
+        name: "脳・神経",
+        icon: "brain.svg",
+        category_id: "e1e76",
+        tags: ["ADHD", "ナルコレプシー", "パニック障害", "不眠症"]
+      },
+      %Top{
+        id: 5,
+        name: "皮膚",
+        icon: "hand.svg",
+        category_id: "d5767",
+        tags: ["そう痒", "湿疹", "皮膚炎", "蕁麻疹", "ヘルペス"]
+      },
+      %Top{
+        id: 6,
+        name: "食道・胃・腸",
+        icon: "stomach.svg",
+        category_id: "ff698",
+        tags: ["胃潰瘍", "逆流性食道炎", "胸やけ", "腹痛"]
+      },
+      %Top{
+        id: 7,
+        name: "目",
+        icon: "eye.svg",
+        category_id: "68549",
+        tags: ["アレルギー性結膜炎", "なみだ目"]
+      },
+      %Top{
+        id: 8,
+        name: "鼻",
+        icon: "nose.svg",
+        category_id: "46521",
+        tags: ["アレルギー性鼻炎", "鼻づまり", "花粉症"]
+      },
+      %Top{
+        id: 9,
+        name: "のど",
+        icon: "throat.svg",
+        category_id: "4cc58",
+        tags: ["のどのはれや痛み", "かぜ", "逆流性食道炎"]
+      },
+      %Top{
+        id: 10,
+        name: "女性の病気",
+        icon: "woman.svg",
+        category_id: "3ebf5",
+        tags: ["生理痛", "PMS", "低用量ピル"]
       }
     ]
   end
