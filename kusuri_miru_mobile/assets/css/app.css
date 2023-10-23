@@ -136,3 +136,55 @@ textarea {
         }
     }
 }
+
+.disease-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+
+    .disease-item {
+      display: flex;
+      flex-direction: column;
+
+      border-bottom: 1px solid #c0c0c0;
+      padding: 12px 0;
+      list-style: none;
+      text-align: center;
+
+      .disease-item-link {
+        display: block;
+        color: #111;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #ebebeb;
+        }
+      }
+
+      .popular-disease-tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        margin-top: 10px;
+        margin-left: -10px;
+
+        .popular-disease-tag {
+          display: inline;
+          font-weight: bold;
+          font-size: 1rem;
+          margin: 4px 24px 0 0;
+        }
+      }
+
+      .all-disease-item-link-wrapper {
+        padding-top: 20px;
+        .all-disease-item-link {
+          font-size: 0.9rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
