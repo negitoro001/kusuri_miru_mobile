@@ -12,43 +12,6 @@
     </script>
   </head>
   <body class="bg-white antialiased">
-    <div class="fixed navbar bg-green-400 text-white w-full z-10 top-0 left-0">
-      <div class="navbar-start">
-        <.link navigate={~p"/tops"}>
-          <img src={~p"/images/logo.svg"} alt="クスリミル" height="56px" width="193px" />
-        </.link>
-      </div>
-      <div class="navbar-center">
-        <span class="normal-case text-4xl"></span>
-      </div>
-      <div class="navbar-end">
-        <div class="drawer drawer-end">
-          <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-          <div class="drawer-content">
-            <!-- Page content here -->
-            <label for="my-drawer" class="drawer-button">
-              <svg
-                class="swap-off fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 512 512"
-              >
-                <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-              </svg>
-            </label>
-          </div>
-          <div class="drawer-side drawer">
-            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-            <ul class="menu p-4 w-80 min-h-full bg-accent-content text-base-content">
-              <!-- Sidebar content here -->
-              <li><a>Sidebar Item 1</a></li>
-              <li><a>Sidebar Item 2</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
     <%= @inner_content %>
   </body>
 </html>
