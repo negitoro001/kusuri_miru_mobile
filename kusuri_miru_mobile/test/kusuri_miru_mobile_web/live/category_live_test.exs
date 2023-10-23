@@ -14,10 +14,14 @@ defmodule KusuriMiruMobileWeb.CategoryLiveTest do
     setup [:create_category]
 
     test "displays category", %{conn: conn, category: category} do
-      {:ok, _show_live, html} = live(conn, ~p"/categories/#{category.id}")
+      {:ok, _show_live, html} = live(conn, ~p"/categories/fedb0")
 
       assert html =~ "Show Category"
-      assert html =~ category.category_name
+      category
+      |> Enum.map(fn category ->
+        assert html =~ category.id
+        assert html =~ category.name
+      end)
     end
   end
 end

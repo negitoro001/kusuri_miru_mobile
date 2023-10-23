@@ -8,7 +8,6 @@ defmodule KusuriMiruMobile.TopsFixtures do
   Generate a top.
   """
   def top_fixture(_attrs \\ %{}) do
-    attrs = KusuriMiruMobile.Tops.list_tops()
-    {:ok, attrs}
+    KusuriMiruMobile.Tops.list_tops()
   end
 end
