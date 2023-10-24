@@ -8,14 +8,7 @@ defmodule KusuriMiruMobile.CategoriesFixtures do
   Generate a category.
   """
   def category_fixture(attrs \\ %{}) do
-    {:ok, category} =
-      attrs
-      |> Enum.into(%{
-        category_name: "some category_name",
-        name: "some name"
-      })
-      |> KusuriMiruMobile.Categories.create_category()
-
-    category
+    attrs
+    |> KusuriMiruMobile.Categories.get_category!()
   end
 end

@@ -1,7 +1,6 @@
 defmodule KusuriMiruMobile.MixProject do
   use Mix.Project
 
-  @version "1.0.0"
   def project do
     [
       app: :kusuri_miru_mobile,
@@ -62,6 +61,7 @@ defmodule KusuriMiruMobile.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:desktop, "~> 1.5"},
       {:wx, "~>1.1", hex: :bridge, targets: [:android, :ios, :desktop]},
       {:req, "~>0.4.4"}

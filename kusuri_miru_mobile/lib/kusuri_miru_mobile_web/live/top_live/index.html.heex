@@ -1,23 +1,17 @@
-<.gheader title="Shleves">
-  <:actions>
-    <.link patch={~p"/tops/new"}>
-      <.icon name="hero-plus-solid" class="h-6 w-6 mr-4" />
-    </.link>
-  </:actions>
-</.gheader>
-
-<div class="container none">
+<div class="container">
   <ul>
-    <li :for={{id, top} <- @streams.tops} id={id}>
-      <ul>
-        <.link navigate={~p"/categories/#{top.category_id}"}><%= top.name %>
-          <img src={~p"/images/icons/disease/#{top.icon}"} height="54px" width="54px" /></.link>
+    <li :for={{id, top} <- @streams.tops} id={id} class="disease-wrapper">
+      <ul class="disease-item">
+        <.link navigate={~p"/categories/#{top.category_id}"} class="disease-item-link">
+          <h3 style="text-align: center"><%= top.name %></h3>
+          <img src={~p"/images/icons/disease/#{top.icon}"} height="54px" width="54px" />
+        </.link>
 
-        <li>
+        <ul class="popular-disease-tags">
           <%= for tag <- top.tags do %>
-            <ul><%= tag %></ul>
+            <li class="popular-disease-tag"><%= tag %></li>
           <% end %>
-        </li>
+        </ul>
       </ul>
     </li>
   </ul>
