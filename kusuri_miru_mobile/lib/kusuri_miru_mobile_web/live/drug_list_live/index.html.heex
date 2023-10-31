@@ -1,0 +1,42 @@
+<.header>
+  Listing Druglists
+  <:actions>
+    <.link patch={~p"/druglists/new"}>
+      <.button>New Drug list</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="druglists"
+  rows={@streams.druglists}
+  row_click={fn {_id, drug_list} -> JS.navigate(~p"/druglists/#{drug_list}") end}
+>
+  <:col :let={{_id, drug_list}} label="Name"><%= drug_list.name %></:col>
+  <:col :let={{_id, drug_list}} label="Reviews"><%= drug_list.reviews %></:col>
+  <:action :let={{_id, drug_list}}>
+    <div class="sr-only">
+      <.link navigate={~p"/druglists/#{drug_list}"}>Show</.link>
+    </div>
+    <.link patch={~p"/druglists/#{drug_list}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, drug_list}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: drug_list.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="drug_list-modal" show on_cancel={JS.patch(~p"/druglists")}>
+  <.live_component
+    module={KusuriMiruMobileWeb.DrugListLive.FormComponent}
+    id={@drug_list.id || :new}
+    title={@page_title}
+    action={@live_action}
+    drug_list={@drug_list}
+    patch={~p"/druglists"}
+  />
+</.modal>

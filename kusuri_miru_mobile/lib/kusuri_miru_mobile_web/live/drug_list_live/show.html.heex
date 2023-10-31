@@ -1,0 +1,7 @@
+<%= for drug <- @drug_list do %>
+  <div>
+    <.link navigate={~p"/drug/#{drug.id}"}>
+      <%= drug.name %>
+    </.link>
+  </div>
+<% end %>

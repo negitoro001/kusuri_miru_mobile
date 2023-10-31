@@ -1,8 +1,9 @@
 <%= for category <- @category do %>
   <div>
-    <%= category.id %>
-    <%= category.name %>
+    <.link navigate={~p"/druglists/#{category.id}"}>
+      <%= category.name %>
+    </.link>
   </div>
 <% end %>
 
-<.back navigate={~p"/categories"}>Back to categories</.back>
+<.back navigate={~p"/tops"}>トップへ戻る</.back>
