@@ -1,4 +1,5 @@
 defmodule KusuriMiruMobile.MixProject do
+  @moduledoc false
   use Mix.Project
 
   def project do
@@ -62,7 +63,7 @@ defmodule KusuriMiruMobile.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:desktop, "~> 1.5"},
+      {:desktop, "~> 1.5", targets: [:android, :ios, :desktop]},
       {:wx, "~>1.1", hex: :bridge, targets: [:android, :ios, :desktop]},
       {:req, "~>0.4.4"}
     ]
