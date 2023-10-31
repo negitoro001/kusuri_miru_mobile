@@ -12,6 +12,8 @@ defmodule KusuriMiruMobile.DrugLists.DrugList do
     field :another_name, :string
     field :text, :string
     field :tags, {:array, :string}
+    field :created_at, :naive_datetime
+
   end
 
   @doc false

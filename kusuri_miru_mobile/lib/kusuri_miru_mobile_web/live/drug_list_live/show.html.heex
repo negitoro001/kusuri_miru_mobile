@@ -1,3 +1,11 @@
+<form>
+<select class="select select-success w-full max-w-xs" phx-change="sort_option" name="name">
+    <option value="created_at">新しい投稿</option>
+    <option value="avg_rating">評価が高い</option>
+    <option value="count_ratings" selected>レビュー数</option>
+</select>
+</form>
+
 <%= for drug <- @drug_list do %>
   <div>
     <img
@@ -22,5 +30,6 @@
         <span><%= tag %></span>
       <% end %>
     </div>
+    <%= drug.created_at %>
   </div>
 <% end %>

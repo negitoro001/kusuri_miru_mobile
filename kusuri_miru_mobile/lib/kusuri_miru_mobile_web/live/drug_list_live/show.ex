@@ -16,6 +16,13 @@ defmodule KusuriMiruMobileWeb.DrugListLive.Show do
      |> assign(:drug_list, DrugLists.get_drug_list!(id))}
   end
 
+  @impl true
+  def handle_event("sort_option", params, socket) do
+    sort = params["name"]
+    socket = assign(socket, :drug_list, socket.assigns.drug_list |> Enum.sort_by(& &1.sort, :desc))
+    {:noreply, socket}
+  end
+
   defp page_title(:show), do: "Show Drug list"
   defp page_title(:edit), do: "Edit Drug list"
 end

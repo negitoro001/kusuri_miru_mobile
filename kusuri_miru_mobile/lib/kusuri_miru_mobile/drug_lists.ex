@@ -49,7 +49,8 @@ defmodule KusuriMiruMobile.DrugLists do
         breadcrumb_list: drug["breadcrumb_list"],
         another_name: drug["another_name"] |> Enum.at(0),
         text: drug["content"]["effects"]["text"],
-        tags: drug["tags"]
+        tags: drug["tags"],
+        created_at: drug["created_at"]
       }
     end)
     |> Enum.sort_by(&(&1.count_ratings), :desc)
