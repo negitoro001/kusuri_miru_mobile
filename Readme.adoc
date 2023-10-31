@@ -1,0 +1,11 @@
+# Kusuri-miru-mobile
+
+## Requirement
+
+- elixir 1.15.1
+- erlang 25.0.4
+
+## このリポジトリ
+
+kusuri-miruのフロント部のElixirDesktop版になります
+

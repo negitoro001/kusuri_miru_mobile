@@ -32,6 +32,13 @@ defmodule KusuriMiruMobileWeb.Router do
 
     live "/categories/:id", CategoryLive.Show, :show
     live "/categories/:id/show/edit", CategoryLive.Show, :edit
+
+    live "/druglists", DrugListLive.Index, :index
+    live "/druglists/new", DrugListLive.Index, :new
+    live "/druglists/:id/edit", DrugListLive.Index, :edit
+
+    live "/druglists/:id", DrugListLive.Show, :show
+    live "/druglists/:id/show/edit", DrugListLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

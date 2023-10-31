@@ -1,0 +1,26 @@
+<%= for drug <- @drug_list do %>
+  <div>
+    <img
+      src={
+        ~s"https://res.cloudinary.com/dzf4vadi4/image/upload/f_auto/d_placeholder.jpg/v1610526537/kusuri-miru/#{drug.id}.jpg"
+      }
+      alt={~s"#{drug.name}"}
+      height="68px"
+      width="68px"
+      style="object-fit: contain;"
+    />
+    <.link navigate={~p"/drug/#{drug.id}"}>
+      <%= drug.name %>
+    </.link>
+    <p><%= drug.medicine_type %></p>
+    <p>レート:<%= drug.avg_rating %></p>
+    <p><%= drug.count_ratings %> 件のレビュー</p>
+    <p>別名: <%= drug.another_name %></p>
+    <%= drug.text %>
+    <div>
+      <%= for tag <- drug.tags do %>
+        <span><%= tag %></span>
+      <% end %>
+    </div>
+  </div>
+<% end %>
