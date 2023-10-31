@@ -40,13 +40,19 @@ defmodule KusuriMiruMobile.DrugLists do
     |> Map.get(:body)
     |> Map.get("drugs")
     |> Enum.map(fn drug ->
-
       %DrugList{
         id: drug["id"],
-        name: drug["name"]
+        name: drug["name"],
+        medicine_type: drug["medicine_type"],
+        avg_rating: drug["avg_rating"],
+        count_ratings: drug["count_ratings"],
+        breadcrumb_list: drug["breadcrumb_list"],
+        another_name: drug["another_name"] |> Enum.at(0),
+        text: drug["content"]["effects"]["text"],
+        tags: drug["tags"]
       }
     end)
-
+    |> Enum.sort_by(&(&1.count_ratings), :desc)
   end
 
   @doc """
