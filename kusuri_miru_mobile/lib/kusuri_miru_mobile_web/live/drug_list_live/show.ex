@@ -17,40 +17,39 @@ defmodule KusuriMiruMobileWeb.DrugListLive.Show do
   end
 
   @impl true
-  def handle_event("sort_option", params, socket) do
-    sort = String.to_atom(params["name"])
+  def handle_event("sort_option", %{"name" => "created_at"} = params, socket) do
+    socket =
+      assign(
+        socket,
+        :drug_list,
+        socket.assigns.drug_list |> Enum.sort_by(& &1.created_at, :desc)
+      )
 
-    case sort do
-      :created_at ->
-        socket =
-          assign(
-            socket,
-            :drug_list,
-            socket.assigns.drug_list |> Enum.sort_by(& &1.created_at, :desc)
-          )
+    {:noreply, socket}
+  end
 
-        {:noreply, socket}
+  @impl true
+  def handle_event("sort_option", %{"name" => "avg_rating"} = params, socket) do
+    socket =
+      assign(
+        socket,
+        :drug_list,
+        socket.assigns.drug_list |> Enum.sort_by(& &1.avg_rating, :desc)
+      )
 
-      :avg_rating ->
-        socket =
-          assign(
-            socket,
-            :drug_list,
-            socket.assigns.drug_list |> Enum.sort_by(& &1.avg_rating, :desc)
-          )
+    {:noreply, socket}
+  end
 
-        {:noreply, socket}
+  @impl true
+  def handle_event("sort_option", %{"name" => "count_ratings"} = params, socket) do
+    socket =
+      assign(
+        socket,
+        :drug_list,
+        socket.assigns.drug_list |> Enum.sort_by(& &1.count_ratings, :desc)
+      )
 
-      :count_ratings ->
-        socket =
-          assign(
-            socket,
-            :drug_list,
-            socket.assigns.drug_list |> Enum.sort_by(& &1.count_ratings, :desc)
-          )
-
-        {:noreply, socket}
-    end
+    {:noreply, socket}
   end
 
   defp page_title(:show), do: "Show Drug list"
