@@ -39,10 +39,10 @@ defmodule KusuriMiruMobile.Drugs do
     attr =
     Req.get!("https://kusuri-miru-api-4b3a54cvqq-an.a.run.app/drugs/#{id}")
     |> Map.get(:body)
+    |> Map.new(fn {k, v} -> {String.to_atom(k), v} end)
 
     struct(Drug, attr)
-    |> IO.inspect
-    |> Enum.sort_by(& &1.count_ratings, :desc)
+    #|> Enum.sort_by(& &1.count_ratings, :desc)
   end
 
   @doc """
