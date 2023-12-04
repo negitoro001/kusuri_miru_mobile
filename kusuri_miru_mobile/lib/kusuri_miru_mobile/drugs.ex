@@ -42,6 +42,7 @@ defmodule KusuriMiruMobile.Drugs do
     |> Map.new(fn {k, v} -> {String.to_atom(k), v} end)
 
     struct(Drug, attr)
+    |> IO.inspect()
     #|> Enum.sort_by(& &1.count_ratings, :desc)
   end
 

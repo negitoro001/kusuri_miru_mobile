@@ -11,7 +11,7 @@ defmodule KusuriMiruMobile.Drugs.Drug do
     field :count_ratings, :integer
     field :breadcrumb_list, {:array, :string}
     field :another_name, :string
-    field :text, :string
+    field :content, :string
     field :tags, {:array, :string}
     field :updated_at, :naive_datetime
 
