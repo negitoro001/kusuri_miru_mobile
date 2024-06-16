@@ -1,0 +1,41 @@
+<.header>
+  Listing Drugs
+  <:actions>
+    <.link patch={~p"/drugs/new"}>
+      <.button>New Drug</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="drugs"
+  rows={@streams.drugs}
+  row_click={fn {_id, drug} -> JS.navigate(~p"/drugs/#{drug}") end}
+>
+  <:col :let={{_id, drug}} label="Comments"><%= drug.comments %></:col>
+  <:action :let={{_id, drug}}>
+    <div class="sr-only">
+      <.link navigate={~p"/drugs/#{drug}"}>Show</.link>
+    </div>
+    <.link patch={~p"/drugs/#{drug}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, drug}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: drug.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="drug-modal" show on_cancel={JS.patch(~p"/drugs")}>
+  <.live_component
+    module={KusuriMiruMobileWeb.DrugLive.FormComponent}
+    id={@drug.id || :new}
+    title={@page_title}
+    action={@live_action}
+    drug={@drug}
+    patch={~p"/drugs"}
+  />
+</.modal>

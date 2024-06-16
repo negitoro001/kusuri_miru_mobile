@@ -65,7 +65,9 @@ defmodule KusuriMiruMobile.MixProject do
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:desktop, "~> 1.5", targets: [:android, :ios, :desktop]},
       {:wx, "~>1.1", hex: :bridge, targets: [:android, :ios, :desktop]},
-      {:req, "~>0.4.4"}
+      {:req, "~>0.4.4"},
+      {:httpoison, "~> 2.0"},
+      {:poison, "~> 5.0"}
     ]
   end
 
