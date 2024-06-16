@@ -4,5 +4,5 @@
 <%= @drug.avg_rating %>
 
 <div>
-<%= @drug.content.effects.text %>
+<%= Map.get(Map.get(@drug.content, "effects"), "text") %>
 </div>
