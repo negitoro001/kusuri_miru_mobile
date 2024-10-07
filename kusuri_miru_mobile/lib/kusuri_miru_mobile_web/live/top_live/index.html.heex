@@ -1,4 +1,4 @@
-<div class="container">
+<%!-- <div class="container">
   <ul>
     <li :for={{id, top} <- @streams.tops} id={id} class="disease-wrapper">
       <ul class="disease-item">
@@ -15,4 +15,81 @@
       </ul>
     </li>
   </ul>
+</div> --%>
+<div class="container">
+  <div class="flex flex-col md:flex-row" id="main_page" class="disease-wrapper">
+    <!-- 処方薬の検索ボックス -->
+    <section class="mb-10">
+      <h1 class="border-b-2 border-gray-300">薬を検索する</h1>
+      <v-row class="no-gutters">
+        <v-col sm="12" xs="12" md="12" class="pb-0">
+          <v-text-field
+            v-model="searchQuery"
+            dense
+            solo
+            name="q"
+            placeholder="薬の名前・病名など"
+            required
+            class="search-field"
+            autocomplete="off"
+          >
+            <template v-slot:append>
+              <v-btn class="bg-teal-300 text-white mt-0" @click="search">検索する</v-btn>
+            </template>
+          </v-text-field>
+        </v-col>
+      </v-row>
+      <div>
+        <h2 class="border-b-2 border-gray-300">人気の検索ワード</h2>
+        <ul class="flex flex-wrap px-0">
+          <%!-- <li v-for="searchWord in searchWords" class="mr-2">
+          <a href={~p"/search?q=+ #{searchWord}"} class="text-blue-500 hover:underline">{{
+            searchWord
+            }}</a>
+        </li> --%>
+        </ul>
+      </div>
+    </section>
+    <!-- 病気のカテゴリー一覧 -->
+    <section>
+      <h1 class="border-b-2 border-gray-300">部位・症状から探す</h1>
+
+      <ul class="flex flex-wrap">
+        <li :for={{id, top} <- @streams.tops} class="m-4">
+          <.link navigate={~p"/categories/#{top.category_id}"} class="block text-center">
+            <h3><%= top.name %></h3>
+            <img
+              src={~p"/images/icons/disease/#{top.icon}"}
+              class="h-14 w-14 mx-auto"
+              loading="lazy"
+              alt={~s"#{top.name}"}
+              draggable="false"
+            />
+          </.link>
+          <ul class="flex flex-wrap justify-center">
+            <%= for tag <- top.tags do %>
+              <li class="popular-disease-tag">
+                <.link navigate={~p"/tag/#{tag}"} class="text-blue-500 hover:underline">
+                  <%= tag %>
+                </.link>
+              </li>
+            <% end %>
+          </ul>
+          <div class="text-center mt-2">
+            <.link
+              navigate={~p"/categories/#{top.category_id}"}
+              class="text-blue-500 hover:underline"
+            >
+              もっと見る &gt;
+            </.link>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="text-sm text-gray-600 mt-10">
+      本サービスにおける情報の提供は、医師・医療従事者等によるものではありません。あくまで専門家の指示に従ってご利用ください。
+      <br />サービス上の情報や利用に関して発生した損害等に関して、サービス運営者は一切の責任を負いかねますことをご了承ください。
+    </section>
+  </div>
 </div>

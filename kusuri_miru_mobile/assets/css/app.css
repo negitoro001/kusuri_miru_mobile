@@ -194,3 +194,7 @@ textarea {
   svg {
     display: inline;
   }
+
+  #main_page {
+  flex-direction: column;
+}
