@@ -42,11 +42,9 @@
       <div>
         <h2 class="border-b-2 border-gray-300">人気の検索ワード</h2>
         <ul class="flex flex-wrap px-0">
-          <%!-- <li v-for="searchWord in searchWords" class="mr-2">
-          <a href={~p"/search?q=+ #{searchWord}"} class="text-blue-500 hover:underline">{{
-            searchWord
-            }}</a>
-        </li> --%>
+          <li :for={{id, word} <- @streams.words} class="mr-2">
+          <.link navigate={~p"/search?q=#{word.word}"} class="text-blue-500 hover:underline"><%= word.word %></.link>
+        </li>
         </ul>
       </div>
     </section>

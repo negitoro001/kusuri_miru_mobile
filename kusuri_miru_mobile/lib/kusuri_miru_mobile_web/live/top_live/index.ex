@@ -3,11 +3,14 @@ defmodule KusuriMiruMobileWeb.TopLive.Index do
 
   alias KusuriMiruMobile.Tops
   alias KusuriMiruMobile.Tops.Top
+  alias KusuriMiruMobile.Words
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, stream(socket, :tops, Tops.list_tops())}
-  end
+  socket = stream(socket, :tops, Tops.list_tops())
+  socket = stream(socket, :words, Words.list_words())
+  {:ok, socket}
+end
 
   @impl true
   def handle_params(params, _url, socket) do
