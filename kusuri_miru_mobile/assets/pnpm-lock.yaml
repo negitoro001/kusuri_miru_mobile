@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       daisyui:
-        specifier: ^5.0.30
-        version: 5.0.30
+        specifier: ^5.0.35
+        version: 5.0.35
 
 packages:
 
-  daisyui@5.0.30:
-    resolution: {integrity: sha512-eLQsjeYC3qDTjapQa30BP/qhdZ9y1II4ZXOEzJ9j0UKJePP3Rnh79rwZkMefkfozW2dgcx65cXTyzAUHLNoCYg==}
+  daisyui@5.0.35:
+    resolution: {integrity: sha512-AWi11n/x5++mps55jcwrBf0Lmip1euWY0FYcH/05SFGmoqrU7S7/aIUWaiaeqlJ5EcmEZ/7zEY73aOxMv6hcIg==}
 
 snapshots:
 
-  daisyui@5.0.30: {}
+  daisyui@5.0.35: {}
