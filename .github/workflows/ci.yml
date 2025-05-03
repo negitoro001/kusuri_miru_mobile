@@ -1,0 +1,51 @@
+name: dependabot ci
+on:
+  pull_request:
+    branches: ['main']
+
+jobs:
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 22.14.0
+  #     - name: "パッケージをインストール"
+  #       run: npm i
+  #     - name: "テスト実行"
+  #       run: npm run test
+  #     - name: "静的にビルドが通ることを確認"
+  #       run: npm run build
+  dependabot:
+    runs-on: ubuntu-latest
+    # needs: build
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      # https://github.com/marketplace/actions/create-github-app-token
+      - name: Create GitHub App Token
+        uses: actions/create-github-app-token@v1.11.6
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+
+      # https://github.com/marketplace/actions/fetch-metadata-from-dependabot-prs
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v2.3.0
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+
+      - name: Enable auto-merge for Dependabot PRs
+        if: |
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        run: |
+          gh pr review --approve "$PR_URL"
+          gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
